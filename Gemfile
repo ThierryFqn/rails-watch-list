@@ -33,6 +33,11 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+# Gemfile
+gem "autoprefixer-rails", "10.2.5"
+gem "font-awesome-sass", "~> 5.15"
+gem "simple_form"
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
