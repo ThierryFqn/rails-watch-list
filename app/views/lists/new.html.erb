@@ -1,0 +1,15 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1040159/pexels-photo-1040159.jpeg?cs=srgb&dl=pexels-jeshootscom-1040159.jpg&fm=jpg);">
+  <div class="container_header">
+    <h1><strong>Create a new list</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="form_container mt-3">
+    <%= simple_form_for (@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Create list", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+  <%= link_to("Back", root_path, class:"btn btn-ghost") %>
+</div>

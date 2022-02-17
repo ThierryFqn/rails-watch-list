@@ -1,0 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1040159/pexels-photo-1040159.jpeg?cs=srgb&dl=pexels-jeshootscom-1040159.jpg&fm=jpg);">
+  <div class="container_header">
+    <h1><strong><%= @list.name %></h1>
+    <p>Add a new bookmark</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="form_container mt-3">
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :movie %>
+      <%= f.input :comment %>
+      <%= f.submit "Create", class: "btn btn-flat" %>
+    <% end %>
+
+    <%= link_to("Back", list_path(@list), class:"btn btn-ghost mt-3") %>
+  </div>
+</div>
