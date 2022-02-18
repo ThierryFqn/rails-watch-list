@@ -37,6 +37,7 @@ end
 gem "autoprefixer-rails", "10.2.5"
 gem "font-awesome-sass", "~> 5.15"
 gem "simple_form"
+gem 'cloudinary', '~> 1.16.0'
 
 gem 'dotenv-rails', groups: [:development, :test]
 

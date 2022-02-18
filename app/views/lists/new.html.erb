@@ -8,8 +8,9 @@
   <div class="form_container mt-3">
     <%= simple_form_for (@list) do |f| %>
       <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "Create list", class: "btn btn-flat" %>
     <% end %>
   </div>
-  <%= link_to("Back", root_path, class:"btn btn-ghost") %>
+  <%= link_to("Back", root_path, class:"btn btn-ghost btn-back") %>
 </div>

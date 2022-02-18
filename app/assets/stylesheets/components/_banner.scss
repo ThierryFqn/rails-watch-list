@@ -1,7 +1,8 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding-top: 20vh;
+  height: 60vh;
 }
 
 .banner h1 {
@@ -21,4 +22,12 @@
 
 .container_header {
   text-align:center;
+}
+
+.home-banner {
+  background-size: cover;
+  height: 90vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 30vh;
 }

@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1040159/pexels-photo-1040159.jpeg?cs=srgb&dl=pexels-jeshootscom-1040159.jpg&fm=jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key %>);">
   <div class="container_header">
     <h1><strong><%= @list.name %></h1>
     <%= link_to("Add a new bookmark",  new_list_bookmark_path(@list), class:"btn btn-flat mt-3") %>
@@ -6,19 +6,25 @@
 </div>
 
 <div class="container">
-    <% @list.bookmarks.each do |bookmark| %>
-      <div class="card-product mt-3">
-        <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title , width: 100 %>
-          <div class="card-product-infos py-5">
-            <h2><%= bookmark.movie.title  %></h2>
-            <p><%= bookmark.movie.overview  %></p>
-            <p> Comment: <%= bookmark.comment %></p>
-            <%= link_to "Delete",
-                bookmark_path(bookmark),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-          </div>
-      </div>
-    <% end %>
-  <%= link_to("Back", root_path, class:"btn btn-ghost mt-3") %>
+    <div class="d-flex justify-content-end mt-3">
+      <%= link_to("Back", root_path, class:"btn btn-ghost btn-back d-block") %>
+    </div>
+    <div class="cards-movies">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="card-product mt-3">
+          <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title , width: 100 %>
+            <div class="card-product-infos py-5">
+              <h2><%= bookmark.movie.title  %></h2>
+              <p><%= bookmark.movie.overview  %></p>
+              <p> Comment: <%= bookmark.comment %></p>
+              <%= link_to bookmark_path(bookmark),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                  <i class="fa-solid fa-trash"></i>
+                  <% end %>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
 </div>
