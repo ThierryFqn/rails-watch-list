@@ -36,11 +36,13 @@ puts "Creating List...🎥"
 file = URI.open('https://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-05/jean-dujardin-oss117-01_0.jpg')
 list_french = List.new(name: 'French Movies')
 list_french.photo.attach(io: file, filename: 'OSS.png', content_type: 'image/jpg')
+list_french.save
 puts "French list created !"
 
 file = URI.open('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hbz-50-most-romantic-movies-of-all-time-titantic-1517604052.jpg')
 list_romantic = List.new(name: 'Romantic Movies')
 list_romantic.photo.attach(io: file, filename: 'titanic.png', content_type: 'image/jpg')
+list_romantic.save
 puts "Romantic list created !"
 
 puts "Seed done, enjoy !"
