@@ -13,16 +13,18 @@
       <% @list.bookmarks.each do |bookmark| %>
         <div class="card-product mt-3">
           <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title , width: 100 %>
-            <div class="card-product-infos py-5">
-              <h2><%= bookmark.movie.title  %></h2>
-              <p><%= bookmark.movie.overview  %></p>
-              <p> Comment: <%= bookmark.comment %></p>
-              <%= link_to bookmark_path(bookmark),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } do %>
-                  <i class="fa-solid fa-trash"></i>
-                  <% end %>
-            </div>
+          <div class="card-product-infos">
+            <h2><%= bookmark.movie.title  %></h2>
+            <p><%= bookmark.movie.overview  %></p>
+            <p> Comment: <%= bookmark.comment %></p>
+          </div>
+          <div class="notification-actions">
+            <%= link_to bookmark_path(bookmark),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
